@@ -49,6 +49,13 @@ module.exports = gql`
     publishingOrganizationKey: ID!
     datasetOccurrences: [Occurrence]
     publisher: Organization
+    citations: [Citation]
+  }
+  type Citation {
+    title: String
+    year: Int
+    source: String
+    abstract: String
   }
   type Species {
     key: Int!

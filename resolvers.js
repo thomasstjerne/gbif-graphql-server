@@ -71,6 +71,12 @@ const eventOccurrences = ({ datasetKey, eventID }) => fetch(`${endpoint}/occurre
 const publisher = ({publishingOrganizationKey}) => fetch(`${endpoint}/organization/${publishingOrganizationKey}`)
 .then(toJSON)
 .catch(handleError)
+
+const citations = ({key}) => fetch(`https://www.gbif.org/api/resource/search?contentType=literature&gbifDatasetKey=${key}`)
+.then(toJSON)
+.then(getResults)
+.catch(handleError)
+
 module.exports = {
     Query: {
         occurrence,
@@ -87,7 +93,8 @@ module.exports = {
     },
     Dataset: {
         datasetOccurrences,
-        publisher
+        publisher,
+        citations
     },
     Event: {
         eventOccurrences
