@@ -1,4 +1,7 @@
 {
+  "scripts": {
+    "start": "node index.js"
+},
   "main": "index.js",
   "dependencies": {
     "apollo-server": "^2.0.2",
